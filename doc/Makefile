@@ -42,6 +42,15 @@ html:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html/stable
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html/stable"
+	
+epub:
+	# These two lines make the build a bit more lengthy, and the
+	# the embedding of images more robust
+	rm -rf $(BUILDDIR)/html/_images
+	#rm -rf _build/doctrees/
+	$(SPHINXBUILD) -b epub $(ALLSPHINXOPTS) $(BUILDDIR)/epub/stable
+	@echo
+	@echo "Build finished. The EPUB ebook is in $(BUILDDIR)/epub/stable"
 
 html-noplot:
 	$(SPHINXBUILD) -D plot_gallery=False -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html/stable
